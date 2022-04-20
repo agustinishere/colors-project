@@ -4,3 +4,16 @@ const generateBtn = document.querySelector(".generate");
 const sliders = document.querySelectorAll('input[type="range"]');
 const currentHexes = document.querySelectorAll(".color h2");
 const popup = document.querySelector(".copy-container");
+const adjustButton = document.querySelectorAll(".adjust");
+const lockButton = document.querySelectorAll(".lock");
+const closeAdjustments = document.querySelectorAll(".close-adjustment");
+const sliderContainers = document.querySelectorAll(".sliders");
+let initialColors;
+//This is for local storage
+let savedPalettes = [];
+
+//Add our event listeners
+generateBtn.addEventListener("click", randomColors);
+sliders.forEach((slider) => {
+  slider.addEventListener("input", hslControls);
+});
