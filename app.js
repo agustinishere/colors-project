@@ -47,3 +47,41 @@ lockButton.forEach((button, index) => {
     lockLayer(e, index);
   });
 });
+
+//Functions
+//Color Generator
+function generateHex() {
+  const hexColor = chroma.random();
+  return hexColor;
+}
+
+function randomColors() {
+  initialColors = [];
+
+  colorDivs.forEach((div, index) => {
+    const hexText = div.children[0];
+    const randomColor = generateHex();
+    //Add it to the array
+    if (div.classList.contains("locked")) {
+      initialColors.push(hexText.innerText);
+      return;
+    } else {
+      initialColors.push(chroma(randomColor).hex());
+    }
+
+    //Add the color to the bg
+    div.style.backgroundColor = randomColor;
+    hexText.innerText = randomColor;
+
+    //Check for contrast
+    checkTextContrast(randomColor, hexText);
+    //Initial Colorize Sliders
+    const color = chroma(randomColor);
+    const sliders = div.querySelectorAll(".sliders input");
+    const hue = sliders[0];
+    const brightness = sliders[1];
+    const saturation = sliders[2];
+
+    colorizeSliders(color, hue, brightness, saturation);
+  });
+}
