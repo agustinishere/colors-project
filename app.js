@@ -188,3 +188,6 @@ function copyToClipboard(hex) {
   popup.classList.add("active");
   popupBox.classList.add("active");
 }
+function openAdjustmentPanel(index) {
+  sliderContainers[index].classList.toggle("active");
+}
