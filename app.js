@@ -205,3 +205,13 @@ function lockLayer(e, index) {
     e.target.innerHTML = '<i class="fas fa-lock-open"></i>';
   }
 }
+
+//Implement Save to palette and LOCAL STORAGE STUFF
+const saveBtn = document.querySelector(".save");
+const submitSave = document.querySelector(".submit-save");
+const closeSave = document.querySelector(".close-save");
+const saveContainer = document.querySelector(".save-container");
+const saveInput = document.querySelector(".save-container input");
+const libraryContainer = document.querySelector(".library-container");
+const libraryBtn = document.querySelector(".library");
+const closeLibraryBtn = document.querySelector(".close-library");
