@@ -215,3 +215,21 @@ const saveInput = document.querySelector(".save-container input");
 const libraryContainer = document.querySelector(".library-container");
 const libraryBtn = document.querySelector(".library");
 const closeLibraryBtn = document.querySelector(".close-library");
+
+//Event Listeners
+saveBtn.addEventListener("click", openPalette);
+closeSave.addEventListener("click", closePalette);
+submitSave.addEventListener("click", savePalette);
+libraryBtn.addEventListener("click", openLibrary);
+closeLibraryBtn.addEventListener("click", closeLibrary);
+
+function openPalette(e) {
+  const popup = saveContainer.children[0];
+  saveContainer.classList.add("active");
+  popup.classList.add("active");
+}
+function closePalette(e) {
+  const popup = saveContainer.children[0];
+  saveContainer.classList.remove("active");
+  popup.classList.add("remove");
+}
