@@ -233,3 +233,11 @@ function closePalette(e) {
   saveContainer.classList.remove("active");
   popup.classList.add("remove");
 }
+function savePalette(e) {
+  saveContainer.classList.remove("active");
+  popup.classList.remove("active");
+  const name = saveInput.value;
+  const colors = [];
+  currentHexes.forEach(hex => {
+    colors.push(hex.innerText);
+  });
